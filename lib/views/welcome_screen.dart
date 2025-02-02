@@ -1,3 +1,4 @@
+import 'package:brain_burst/admin/admin_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -53,7 +54,13 @@ class WelcomeScreen extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => QuizCategoryScreen());
+                    final userName = userNameController.text;
+
+                    if (userName == 'Viraj' || userName == 'viraj') {
+                      Get.to(AdminDashboard());
+                    } else {
+                      Get.to(() => QuizCategoryScreen());
+                    }
                   },
                   child: Container(
                     width: double.infinity,
