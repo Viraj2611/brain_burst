@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
 import '../utils/constants.dart';
 import 'quiz_category.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  TextEditingController userNameController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
   WelcomeScreen({super.key});
 
   @override
@@ -54,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    Get.to(QuizCategoryScreen());
+                    Get.to(() => QuizCategoryScreen());
                   },
                   child: Container(
                     width: double.infinity,
